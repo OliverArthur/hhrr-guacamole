@@ -7,6 +7,5 @@ class UserDto:
         'last_name': fields.String(required=True, description='user last name'),
         'name': fields.String(required=True, description='user name'),
         'password': fields.String(required=True, description='user password'),
-        'public_id': fields.String(description='user Identifier'),
-        'started_on': fields.DateTime(required=True, description='User start in the organization')
+        'public_id': fields.String(description='user Identifier')
     })

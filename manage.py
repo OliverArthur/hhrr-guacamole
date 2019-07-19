@@ -21,11 +21,23 @@ manager.add_command('db', MigrateCommand)
 
 @manager.command
 def run():
-    app.run()
+    app.run(debug=True, host="0.0.0.0", port=5000)
+
+@manager.command
+def recreate_db():
+    """
+    Recreates a database.
+    """
+    db.drop_all()
+    db.create_all()
+    db.session.commit()
+
 
 @manager.command
 def test():
-    """Runs the unit tests."""
+    """
+    Runs the unit tests.
+    """
     tests = unittest.TestLoader().discover('app/test', pattern='test*.py')
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
