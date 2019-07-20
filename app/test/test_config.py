@@ -18,7 +18,7 @@ class TestDevelopmentConfig(TestCase):
         self.assertTrue(app.config['DEBUG'] is True)
         self.assertFalse(current_app is None)
         self.assertTrue(
-            app.config['SQLALCHEMY_DATABASE_URI'] == 'sqlite:///' + os.path.join(basedir, 'hhrr_dev.db')
+            app.config['SQLALCHEMY_DATABASE_URI'] == 'postgresql://guacamole:Test1234x@127.0.0.1:5432/guacamoledb'
         )
 
 
@@ -31,7 +31,7 @@ class TestTestingConfig(TestCase):
         self.assertFalse(app.config['SECRET_KEY'] is '4tUC^2AAUog3')
         self.assertTrue(app.config['DEBUG'])
         self.assertTrue(
-            app.config['SQLALCHEMY_DATABASE_URI'] == 'sqlite:///' + os.path.join(basedir, 'hhrr_test.db')
+            app.config['SQLALCHEMY_DATABASE_URI'] == 'postgresql://guacamole:Test1234x@127.0.0.1:5432/guacamoletest_db'
         )
 
 
