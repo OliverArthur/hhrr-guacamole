@@ -11,17 +11,20 @@ class Config:
 
 class DevelopmentConfig(Config):
     # uncomment the line below to use postgres
-    # SQLALCHEMY_DATABASE_URI = postgres_local_base
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'hhrr_dev.db')
+    url = (
+        "postgresql://guacamole:Test1234x@127.0.0.1:5432/guacamoledb"
+    )
+    SQLALCHEMY_DATABASE_URI = url
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class TestingConfig(Config):
-    # uncomment the line below to use postgres
-    # SQLALCHEMY_DATABASE_URI = postgres_local_base
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'hhrr_test.db')
+    url = (
+        "postgresql://guacamole:Test1234x@127.0.0.1:5432/guacamoletest_db"
+    )
+    SQLALCHEMY_DATABASE_URI = url
     PRESERVE_CONTEXT_ON_EXCEPTION = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 

@@ -15,13 +15,12 @@ def create_new_user(data):
             name=data['name'],
             password=data['password'],
             public_id=str(uuid.uuid4()),
-            registered_on=datetime.datetime.utcnow(),
-            started_on=data['started_on']
+            registered_on=datetime.datetime.utcnow()
         )
         save_changes(new_user)
         response_object = {
             'status': 'success',
-            'message': 'Successfully registered.' 
+            'message': 'Successfully registered.'
         }
         return response_object, 201
     else:
