@@ -34,6 +34,7 @@ def get_all_users():
 def get_an_user(public_id):
     return User.query.filter_by(public_id=public_id).first()
 
+
 def generate_token(user):
     try:
         auth_token = User.encode_auth_token(user.id)

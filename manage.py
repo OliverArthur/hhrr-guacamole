@@ -20,9 +20,11 @@ migrate = Migrate(app, db)
 
 manager.add_command('db', MigrateCommand)
 
+
 @manager.command
 def run():
     app.run()
+
 
 @manager.command
 def recreate_db():
@@ -35,6 +37,7 @@ def recreate_db():
     db.create_all()
     db.session.commit()
 
+
 @manager.command
 def test():
     """Runs the unit tests."""
@@ -43,6 +46,7 @@ def test():
     if result.wasSuccessful():
         return 0
     return 1
+
 
 if __name__ == '__main__':
     manager.run()

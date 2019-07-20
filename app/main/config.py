@@ -5,9 +5,11 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', '4tUC^2AAUog3')
     DEBUG = False
+
 
 class DevelopmentConfig(Config):
     # uncomment the line below to use postgres
@@ -18,6 +20,7 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = url
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+
 class TestingConfig(Config):
     DEBUG = True
     TESTING = True
@@ -27,6 +30,7 @@ class TestingConfig(Config):
     SQLALCHEMY_DATABASE_URI = url
     PRESERVE_CONTEXT_ON_EXCEPTION = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
 
 class ProductionConfig(Config):
     # uncomment the line below to use postgres

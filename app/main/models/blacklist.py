@@ -1,6 +1,7 @@
 import datetime
 from .. import db
 
+
 class BlacklistToken(db.Model):
     """
     Token Model for storing JWT tokens
@@ -19,8 +20,8 @@ class BlacklistToken(db.Model):
 
     @staticmethod
     def check_blacklist(auth_token):
-      res = BlacklistToken.query.filter_by(token=str(auth_token)).first()
-      if res:
-        return True
-      else:
-        return False
+        res = BlacklistToken.query.filter_by(token=str(auth_token)).first()
+        if res:
+            return True
+        else:
+            return False
