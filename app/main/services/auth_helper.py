@@ -1,5 +1,5 @@
 from app.main.models.user import User
-from ..services.blacklist import save_token
+from app.main.services.blacklist import save_token
 
 
 class Auth:

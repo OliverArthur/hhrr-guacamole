@@ -14,6 +14,7 @@ class Post(db.Model):
     slug = db.Column(db.String(80), unique=True)
     likes = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     @staticmethod
     def generate_slug(target, value, oldValue, initiador):

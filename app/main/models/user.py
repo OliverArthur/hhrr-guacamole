@@ -17,6 +17,7 @@ class User(db.Model):
     password_hash = db.Column(db.String(100))
     public_id = db.Column(db.String(100), unique=True)
     registered_on = db.Column(db.DateTime, nullable=False)
+    posts = db.relationship('Post', backref='user')
 
     @property
     def password(self):

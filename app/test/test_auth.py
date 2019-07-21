@@ -70,7 +70,6 @@ class TestAuthBlueprint(BaseTestCase):
                 )
             )
             data = json.loads(response.data.decode())
-            print(data)
             self.assertTrue(data['status'] == 'success')
             self.assertEqual(response.status_code, 200)
 
