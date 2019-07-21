@@ -7,6 +7,7 @@ from flask_script import Manager
 from app.main import create_app, db
 from app.main.models import user
 from app.main.models import blacklist
+from app.main.models import post
 from app import blueprint
 
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
