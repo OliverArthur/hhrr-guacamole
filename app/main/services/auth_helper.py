@@ -36,7 +36,7 @@ class Auth:
     @staticmethod
     def logout_user(data):
         if data:
-            auth_token = data.split("")[1]
+            auth_token = data.split(" ")[1]
         else:
             auth_token = ''
 
